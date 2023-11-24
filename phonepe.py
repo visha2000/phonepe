@@ -7,17 +7,6 @@ import plotly.express as px
 from streamlit_option_menu import option_menu
 from PIL import Image
 
-# Setting up page configuration
-#icon = Image.open("ICN.png")
-st.set_page_config(page_title= "Phonepe Pulse Data Visualization",
-                   #page_icon= icon,
-                   layout= "wide",
-                   initial_sidebar_state= "expanded",
-                   menu_items={'About': """# This dashboard app is created by *Jafar Hussain*!
-                                        Data has been cloned from Phonepe Pulse Github Repo"""})
-
-st.sidebar.header(":wave: :violet[**Hello! Welcome to the dashboard**]")
-
 # connecting with pymysql database
 con=pymysql.connect(
     host="localhost",
@@ -26,6 +15,8 @@ con=pymysql.connect(
     database="Phonepe",
     port = 3306 )
 mycursor=con.cursor()
+
+st.sidebar.header(":wave: :violet[**Hello! Welcome to the dashboard**]")
 
 # Creating option menu in the side bar
 with st.sidebar:
